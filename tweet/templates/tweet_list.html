@@ -27,10 +27,12 @@ Echo Nest
                     <h3 class="username">{{tweet.user.username}}</h3>
                 </div>
                 <p class="tweet-text">{{tweet.text}}</p>
+                {% if tweet.user == user %}
                 <div class="tweet-actions">
                     <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-small btn-outline">Edit</a>
                     <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-small btn-danger">Delete</a>
                 </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
