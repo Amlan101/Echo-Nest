@@ -19,9 +19,11 @@ Echo Nest
     <div class="tweets-grid">
         {% for tweet in tweets %}
         <div class="tweet-card">
+            {% if tweet.photo %}
             <div class="tweet-image">
                 <img src="{{tweet.photo.url}}" alt="Tweet image">
             </div>
+            {% endif %}
             <div class="tweet-content">
                 <div class="tweet-header">
                     <h3 class="username">{{tweet.user.username}}</h3>
